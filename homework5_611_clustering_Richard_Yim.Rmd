@@ -1,0 +1,22 @@
+---
+title: "BIOS 611 - Clustering Assignment"
+author: "Richard Paul Yim"
+date: "26 October 2025"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Task 1
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{task1_figure.pdf}
+    \caption{This is the caption for my figure.}
+    \label{fig:my_figure}
+\end{figure}
+
+# Task 2 
+
