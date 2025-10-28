@@ -4,6 +4,8 @@ This repository contains the implementation and analysis for BIOS 611 Homework 5
 
 The response to homework questions can be found in `homework5_611_clustering_Richard_Yim.html`. Pleaes download the html file and open in a web browser to render the responses and results.
 
+(A Dockerfile is included for which this project will successfully build.)
+
 ## Project Structure
 
 ```
