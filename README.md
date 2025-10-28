@@ -2,6 +2,8 @@
 
 This repository contains the implementation and analysis for BIOS 611 Homework 5. The project explores two key clustering analysis tasks: evaluating gap statistics for determining optimal cluster counts in high-dimensional data, and implementing spectral clustering on non-convex shell-shaped clusters.
 
+The response to homework questions can be found in `homework5_611_clustering_Richard_Yim.html`. Pleaes download the html file and open in a web browser to render the responses and results.
+
 ## Project Structure
 
 ```
