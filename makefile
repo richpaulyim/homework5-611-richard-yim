@@ -1,37 +1,40 @@
 # Define files
 RMD = homework5_611_clustering_Richard_Yim.Rmd
-PDF = homework5_611_clustering_Richard_Yim.pdf
-FIGURES = task1_figure.pdf
+HTML = homework5_611_clustering_Richard_Yim.html
+dir1 = task1
+dir2 = task2
+FIGURES = $(dir1)/task1_figure.png $(dir2)/task2_figure.png
 
 # Default target
-all: task1_figure.pdf $(PDF) 
+all: $(dir1)/task1_figure.png $(dir2)/task2_figure.png $(HTML) 
 
 # task 1 =======================================================================
 # generating the cluster gap data
-task1_data.csv: task1_simulation.R
-	Rscript task1_simulation.R
+$(dir1)/task1_data.csv: $(dir1)/task1_simulation.R
+	Rscript $(dir1)/task1_simulation.R
 
 # generate cluster gap figure
-task1_figure.pdf: task1_data.csv task1_simulation.R
-	Rscript task1_figure.R
+$(dir1)/task1_figure.png: $(dir1)/task1_data.csv $(dir1)/task1_simulation.R $(dir1)/task1_figure.R
+	Rscript $(dir1)/task1_figure.R
 # ==============================================================================
 
 # task 2 =======================================================================
-# generating the cluster gap data
-#task1_data.csv: cluster_gap_statistic.R
-#	Rscript cluster_gap_statistic.R
-## generate cluster gap figure
-#cluster_gap_analysis.png: task1_data.csv cluster_gap_statistic.R
-#	Rscript task1_figure.R
+# generating the optimal k data
+$(dir2)/task2_data.csv: $(dir2)/task2_simulation.R $(dir2)/task2_helpers.R
+	Rscript $(dir2)/task2_simulation.R
+
+# generate optimal k figure
+$(dir2)/task2_figure.png: $(dir2)/task2_data.csv $(dir2)/task2_simulation.R $(dir2)/task2_helpers.R $(dir2)/task2_figure.R
+	Rscript $(dir2)/task2_figure.R
 # ==============================================================================
 
-# Knit RMD to PDF
-$(PDF): $(RMD) $(DATA) $(SCRIPTS)
+# Knit RMD to HTML
+$(HTML): $(RMD) $(FIGURES) $(dir2)/task2_helpers.R
 	Rscript -e "rmarkdown::render('$(RMD)')"
 
 # Clean up
 clean:
-	rm -f $(PDF)
+	rm -f $(HTML)
 	rm -f *.log *.aux *.tex
 # rebuild
 rebuild: clean all
