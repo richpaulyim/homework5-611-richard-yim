@@ -1,6 +1,6 @@
 # BIOS 611 - Homework 5: Clustering Analysis
 
-This repository contains the implementation and analysis for BIOS 611 Homework 5, a comprehensive clustering project by Richard Paul Yim. The project explores two key clustering analysis tasks: evaluating gap statistics for determining optimal cluster counts in high-dimensional data, and implementing spectral clustering on non-convex shell-shaped clusters.
+This repository contains the implementation and analysis for BIOS 611 Homework 5. The project explores two key clustering analysis tasks: evaluating gap statistics for determining optimal cluster counts in high-dimensional data, and implementing spectral clustering on non-convex shell-shaped clusters.
 
 ## Project Structure
 
